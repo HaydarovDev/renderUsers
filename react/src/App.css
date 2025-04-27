@@ -25,3 +25,24 @@ ul input {
   border-radius: 7px;
   outline: none;
 }
+
+ul li span {
+  color: blanchedalmond;
+}
+
+.form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  gap: 10px;
+}
+
+.form input,
+select {
+  width: 100%;
+  padding: 5px;
+  outline: none;
+  border-radius: 5px;
+}
