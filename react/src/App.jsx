@@ -66,7 +66,7 @@ function App() {
 
   return (
     <div>
-      <div className="form">
+      {/* <div className="form">
         <input type="text" placeholder="Enter firstname..." />
         <input
           type="text"
@@ -79,7 +79,7 @@ function App() {
           <option value="relatives">Relatives</option>
         </select>
         <input type="number" placeholder="Enter phone number" />
-      </div>
+      </div> */}
 
       <h1>Users</h1>
       <ul>
