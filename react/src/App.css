@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 20px;
+}
+
+ul li {
+  list-style: none;
+  background: black;
+  color: white;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 7px;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+}
+
+ul input {
+  border: 2px solid gray;
+  padding: 7px 10px;
+  border-radius: 7px;
+  outline: none;
+}
