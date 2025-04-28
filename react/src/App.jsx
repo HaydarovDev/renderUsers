@@ -19,14 +19,14 @@ const users = [
   {
     firstName: "Cornelius Spinka Sr.",
     lastName: "Langosh",
-    categories: "family",
+    categories: "friends",
     phone: "(661) 426-1902",
     id: "3",
   },
   {
     firstName: "Victoria Kutch",
     lastName: "Kozey",
-    categories: "family",
+    categories: "friends",
     phone: "1-619-205-9857",
     id: "4",
   },
@@ -55,32 +55,21 @@ const users = [
 
 function App() {
   const [search, setSearch] = useState("");
+  const [filteredUser, setFilter] = useState("all");
+
+  // const
 
   const filteredUsers = users.filter((user) => {
-    if (search == "") {
-      return true;
-    } else {
-      return user.lastName.toLowerCase().includes(search.toLowerCase());
-    }
+    const matchCategory =
+      filteredUser === "all" || user.categories === filteredUser;
+    const matchSearch = user.lastName
+      .toLowerCase()
+      .includes(search.toLowerCase());
+    return matchSearch && matchCategory;
   });
 
   return (
     <div>
-      {/* <div className="form">
-        <input type="text" placeholder="Enter firstname..." />
-        <input
-          type="text"
-          placeholder="Enter lastname..."
-          onChange={(e) => setLastName(e.target.value)}
-        />
-        <select name="" id="">
-          <option value="family">Family</option>
-          <option value="family">Friends</option>
-          <option value="relatives">Relatives</option>
-        </select>
-        <input type="number" placeholder="Enter phone number" />
-      </div> */}
-
       <h1>Users</h1>
       <ul>
         <input
@@ -88,6 +77,18 @@ function App() {
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search user"
         />
+
+        <select
+          name=""
+          id="select"
+          onChange={(e) => setFilter(e.target.value)}
+          defaultValue="all"
+        >
+          <option value="all">All</option>
+          <option value="family">Family</option>
+          <option value="relatives">Relatives</option>
+          <option value="friends">Friends</option>
+        </select>
 
         {filteredUsers.map((user) => {
           return (
